@@ -1,0 +1,12 @@
+<IfModule dir_module>
+   DirectoryIndex index.php
+</IfModule>
+
+# включаю проверку адресной строки
+RewriteEngine On
+# проверяю, что в адресной строке не файл
+RewriteCond %{REQUEST_FILENAME} !-f
+# проверяю, что в адресной строке не каталог
+RewriteCond %{REQUEST_FILENAME} !-d
+# перенапрвляю запрос на главный файл
+RewriteRule ^(.*)$ /index.php?$1 [QSA,L]

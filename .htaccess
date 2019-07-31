@@ -1,0 +1,8 @@
+<IfModule dir_module>
+   DirectoryIndex index.php
+</IfModule>
+
+# включаю проверку адресной строки
+RewriteEngine On
+# перенаправляю запросы на папку public
+RewriteRule ^(.*)$ /public/$1
